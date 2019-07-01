@@ -58,15 +58,29 @@ git push -u origin HEAD
 ```
 git branch my-branch
 ```
+
 <h3>To Switch To A Branch</h3>
+
 ```
 git checkout my-branch
 ```
+
 <h3>To Switch To A New Branch **from 'master'***</h3>
+
 ```
 git checkout master -b new-branch
 ```
+
 <h3>To Switch To A New Branch **from current location ("HEAD")**</h3>
+
 ```
 git checkout -b new-branch
 ```
+
+<h3>To Delete A Local Branch</h3>
+
+```
+git branch -d branch
+```
+
+<p>**NOTE:** Use '-D' if the branch has not been merged.</p>
