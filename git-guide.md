@@ -23,10 +23,9 @@ git config --global core.editor "atom"
 
 ```
 git add .  OR git add -A
-git push -u origin (branch)
 ```
 
-<h3>Save Change in Git</h3>
+<h3>Save Changes in Git</h3>
 <p> To save the added changes into history, commit with a useful descriptive message.</p>
 
 ```
@@ -38,4 +37,29 @@ git commit -m "Commit message here (what is added/changed?)"
 
 ```
 git diff --staged
+```
+
+<h3>Push to GitHub</h3>
+<p>To push changes on the current local branch to it's remote branch (on GitHub):</p>
+
+```
+git push
+```
+<p>OR, if the current branch has not been pushed yet:</p>
+```
+git push -u origin HEAD
+```
+
+<h2>Branching</h2>
+<h3>To Create A Branch **from current location("HEAD")**</h3>
+```
+git branch my-branch
+```
+<h3>To Switch To A Branch</h3>
+```
+git checkout my-branch
+```
+<h3>To Switch To A New Branch **from 'master'***</h3>
+```
+git checkout master -b new-branch
 ```
