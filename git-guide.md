@@ -45,13 +45,16 @@ git diff --staged
 ```
 git push
 ```
+
 <p>OR, if the current branch has not been pushed yet:</p>
+
 ```
 git push -u origin HEAD
 ```
 
 <h2>Branching</h2>
 <h3>To Create A Branch **from current location("HEAD")**</h3>
+
 ```
 git branch my-branch
 ```
@@ -62,4 +65,8 @@ git checkout my-branch
 <h3>To Switch To A New Branch **from 'master'***</h3>
 ```
 git checkout master -b new-branch
+```
+<h3>To Switch To A New Branch **from current location ("HEAD")**</h3>
+```
+git checkout -b new-branch
 ```
