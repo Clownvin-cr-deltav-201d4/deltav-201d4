@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+  body, h1, p {
+    text-shadow: 0 0 12px #db00ff;
+  }
+  body {
+    background-color: #171717;
+    color: #a5ff00;
+  }
+  h1 {
+    color: #ff00f1;
+  }
+  </style>
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script>
+  "use strict";
+  //Lets make a lamba, because why not.
+  var verifyInput = (inputString, requiredLength, inputName) => {
+    if (!inputString) {
+      alert("You must include an actual " + inputName + "... try again.");
+      return false;
+    }
+    if (inputString.length < requiredLength) {
+      alert("Your " + inputName + " must be at least " + requiredLength + " characters long... try again.");
+      return false;
+    }
+    return true;
+  };
+
+  function lab1() {
+    var username;
+
+    while (!verifyInput(username = prompt("Enter your username:"), 3, "username"));
+    console.log("Your username: "+username);
+    alert("Your username: "+username);
+    document.getElementById("username").innerHTML = username;
+
+    var password;
+
+    while (!verifyInput(password = prompt("Enter your password:"), 6, "password"));
+    console.log("Your username: "+username+"\nYour password: "+password);
+    if (password.length > 8) {
+      alert("Your username: "+username+"\nYour password: "+password+"... That's a really good password! (based on length)");
+    } else {
+      alert("Your username: "+username+"\nYour password: "+password);
+    }
+    document.getElementById("password").innerHTML = password;
+
+    var recoveryQuestion;
+
+    while (!verifyInput(recoveryQuestion = prompt("Enter a recovery question:"), 1, "recovery question"));
+    console.log("Your username: "+username+"\nYour password: "+password+"\nYour recovery question: "+recoveryQuestion);
+    alert("Your username: "+username+"\nYour password: "+password+"\nYour recovery question: "+recoveryQuestion);
+    document.getElementById("recovquestion").innerHTML = recoveryQuestion;
+
+    var recoveryAnswer;
+
+    while (!verifyInput(recoveryAnswer = prompt("Enter an answer to your recovery question:"), 1, "recovery answer"));
+    console.log("Your information:\nUsername: " + username+ "\nPassword: " + password + "\nRecovery Question: " + recoveryQuestion + "\nRecovery Answer: " + recoveryAnswer);
+    alert("Your information:\nUsername: " + username+ "\nPassword: " + password + "\nRecovery Question: " + recoveryQuestion + "\nRecovery Answer: " + recoveryAnswer);
+    document.getElementById("recovanswer").innerHTML = recoveryAnswer;
+  }
+  </script>
+  <!-- <p> stuff <script>document.write("stuff2");</script></p>      NOTE that you can edit text inside tags using similar method -->
+</head>
+<body onload="lab1()">
+  <header>
+    <title>Class 1 Lab</title> <!-- Because I don't know what else to put in the header for this, if the <h1> is in <main>
+      To note, I don't like how the documents recommend putting <h1> inside main instead of header. Ignoring putting <h1> in <header>
+      is like declaring a <head> but including no metadata -->
+    </header>
+    <main>
+      <h1>Class 1 Lab</h1>
+
+      <!-- I tried to get the <p>s to show up before the script gets executed, but placing the <p> first does not seem to work.
+      Instead, I opted to just wait for document onload event -->
+
+      <p style="color:#e68d8d;background-color: rgb(0, 0, 0);text-align: center;border: 4px dotted blue;"> Enter a username: </p><div id="username"></div>
+
+      <p style="color:#00ff30;background-color: rgb(45, 45, 45);text-align: left;border: 5px solid red;"> Enter a password: </p><div id="password"></div>
+
+      <p style="color:#0030ff;background-color: rgb(167, 167, 167);text-align: right;margin: 25px;"> Enter a recovery question: </p><div id="recovquestion"></div>
+
+      <p style="color:#ff00e6;background-color: rgb(255, 255, 255);text-align: justify;"> Enter an answer to your recovery question: </p><div id="recovanswer"></div>
+
+      <p style="color:#fffc00;text-decoration: underline;"> Thanks, you should be all set now!</p>
+    </main>
+    <footer>
+      &copy; Absolutely no-one!
+    </footer>
+  </body>
+  </html>
